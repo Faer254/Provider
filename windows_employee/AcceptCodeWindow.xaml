@@ -1,0 +1,100 @@
+﻿<Window x:Class="Provider.windows_employee.AcceptCodeWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Provider.windows_employee"
+        mc:Ignorable="d"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        KeyUp="enter_Click"
+        Title="Подтверждение"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        WindowStartupLocation="CenterScreen" 
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="150" Width="250"
+        Style="{StaticResource windowBorderTheme}"
+        FontFamily="/resources/fonts/Nunito-ExtraBold.ttf#Nunito">
+    <Border x:Name="mainBorder" 
+            Margin="3" 
+            CornerRadius="10" 
+            BorderThickness="1" 
+            BorderBrush="#dcdcdc"
+            Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <!--WINDOW INTERFACE-->
+            <xctk:MaskedTextBox x:Name="codeTB"
+                                Margin="0 26 0 0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Width="200"
+                                FontSize="15"
+                                Mask="0000" 
+                                BorderBrush="{DynamicResource MaterialDesignDivider}"
+                                Foreground="{DynamicResource MaterialDesignBody}"
+                                materialDesign:HintAssist.Hint="Код подтверждения"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+            <Button x:Name="acceptButton"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="10"
+                    HorizontalAlignment="Right"
+                    Width="140" Height="30"
+                    FontSize="14"
+                    materialDesign:ButtonAssist.CornerRadius="10"
+                    Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                    Content="Подтвердить"
+                    Click="acceptButton_Click" />
+            <!--WINDOW INTERFACE END-->
+
+
+            <!--WINDOW CHROME-->
+            <Grid Grid.ColumnSpan="2" VerticalAlignment="Top">
+                <Border x:Name="windowChromeBorder" 
+                        CornerRadius="9.5 9.5 0 0" 
+                        Opacity="0.35"
+                        Background="#dcdcdc" />
+
+                <!--WINDOW NAME LABEL-->
+                <Label x:Name="windowNameLabel" 
+                       Margin="5 3 5 3"
+                       Padding="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" 
+                       FontSize="15"
+                       FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                       Content="Подтверждение" />
+                <!--WINDOW NAME LABEL END-->
+
+                <!--WINDOW BUTTONS-->
+                <Button x:Name="exitButton"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Padding="0"
+                        Width="45" Height="26"
+                        BorderThickness="0"
+                        Foreground="Crimson"
+                        materialDesign:ButtonAssist.CornerRadius="0 9.5 0 0"
+                        materialDesign:RippleAssist.Feedback="red"
+                        Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                        Click="exit">
+                    <Image x:Name="closeImage" Source="/resources/images/close-icon.png" />
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

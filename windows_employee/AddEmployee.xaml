@@ -1,0 +1,219 @@
+﻿<Window x:Class="Provider.windows_employee.AddEmployee"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Provider.windows_employee"
+        mc:Ignorable="d"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="Добавление сотрудника"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        WindowStartupLocation="CenterScreen" 
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        SizeToContent="Height" Width="300"
+        Style="{StaticResource windowBorderTheme}"
+        FontFamily="/resources/fonts/Nunito-ExtraBold.ttf#Nunito"
+        KeyUp="enter_Click">
+    
+    <Window.Resources>
+        <Storyboard x:Key="ShowError">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.450" />
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                             From="-100" To="0" Duration="0:0:0.400">
+                <DoubleAnimation.EasingFunction>
+                    <ElasticEase Oscillations="1" Springiness="6" EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="HideError">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="1" To="0" Duration="0:0:0.750" />
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                             From="0" To="-100" Duration="0:0:0.700">
+                <DoubleAnimation.EasingFunction>
+                    <QuadraticEase EasingMode="EaseIn" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+
+    <Border x:Name="mainBorder" 
+            Margin="3 0 3 3" 
+            CornerRadius="10" 
+            BorderThickness="1" 
+            BorderBrush="#dcdcdc"
+            Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <!--WINDOW INTERFACE-->
+            <StackPanel Margin="0 26 0 0" VerticalAlignment="Top">
+                <TextBox x:Name="loginTB"
+                         Margin="15 20 15 20"
+                         FontSize="18"
+                         MaxLength="20"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         materialDesign:HintAssist.Hint="Логин" 
+                         materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                
+                <TextBox x:Name="emailTB"
+                         Margin="15 0 15 20"
+                         FontSize="18"
+                         MaxLength="50"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         materialDesign:HintAssist.Hint="E-mail" 
+                         materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                <xctk:MaskedTextBox x:Name="phoneTB"
+                                    Margin="15 0 15 20"
+                                    FontSize="18"
+                                    Mask="+7 (\900) 000-00-00"
+                                    BorderBrush="{DynamicResource MaterialDesignDivider}"
+                                    materialDesign:HintAssist.Hint="Номер телефона" 
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                <PasswordBox x:Name="passwordPB" 
+                             Margin="15 0 15 20"
+                             FontSize="18"
+                             MaxLength="20"
+                             BorderThickness="0 0 0 2"
+                             BorderBrush="{DynamicResource MaterialDesignDivider}"
+                             materialDesign:HintAssist.Hint="Пароль" 
+                             Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" />
+
+                <TextBox x:Name="fullNameTB"
+                         Margin="15 0 15 20"
+                         FontSize="18"
+                         MaxLength="50"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         materialDesign:HintAssist.Hint="ФИО" 
+                         materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         PreviewTextInput="fullNameTB_PreviewTextInput"
+                         TextChanged="fullNameTB_TextChanged" />
+
+                <ComboBox x:Name="roleCB"
+                          Margin="15 0 15 20"
+                          FontSize="20"
+                          Foreground="{DynamicResource MaterialDesignBody}"
+                          BorderThickness="0 0 0 2"
+                          BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                          materialDesign:HintAssist.Hint="Роль"
+                          SelectedIndex="1">
+                    <ComboBoxItem Content="Администратор" />
+                    <ComboBoxItem Content="Менеджер" />
+                </ComboBox>
+
+                <ComboBox x:Name="statusCB"
+                          Margin="15 0 15 20"
+                          FontSize="20"
+                          Foreground="{DynamicResource MaterialDesignBody}"
+                          BorderThickness="0 0 0 2"
+                          BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                          materialDesign:HintAssist.Hint="Статус"
+                          SelectedIndex="0">
+                    <ComboBoxItem Content="Нет блокировки" />
+                    <ComboBoxItem Content="Заблокирован" />
+                </ComboBox>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="cancelButton"
+                        Margin="5"
+                        Height="40"
+                        FontSize="20"
+                        materialDesign:ButtonAssist.CornerRadius="10"
+                        Style="{StaticResource MaterialDesignOutlinedButton}"
+                        Content="Отмена"
+                        Click="exit" />
+                <Button x:Name="saveButton"
+                        Grid.Column="1"
+                        Margin="5"
+                        Height="40"
+                        FontSize="18"
+                        materialDesign:ButtonAssist.CornerRadius="10"
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                        Content="Сохранить"
+                        Click="saveButton_Click" />
+            </Grid>
+            <!--WINDOW INTERFACE END-->
+
+            <!--ERROR LABEL-->
+            <Border x:Name="errorLabel"
+                    Visibility="Collapsed"
+                    Grid.ColumnSpan="2"
+                    Margin="0 26 0 0"
+                    CornerRadius="10"
+                    Opacity="0"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top"
+                    RenderTransformOrigin="0.5,0.5"
+                    Loaded="Border_Loaded"
+                    Background="Red">
+                <Border.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Border.RenderTransform>
+
+                <TextBlock x:Name="errorText"
+                           Margin="10 5 10 5"
+                           Foreground="Black"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           TextAlignment="Center"
+                           FontSize="20" />
+            </Border>
+            <!--ERROR LABEL END-->
+
+            <!--WINDOW CHROME-->
+            <Grid Grid.ColumnSpan="2" VerticalAlignment="Top">
+                <Border x:Name="windowChromeBorder" 
+                        CornerRadius="9.5 9.5 0 0" 
+                        Opacity="0.35"
+                        Background="#dcdcdc" />
+
+                <!--WINDOW NAME LABEL-->
+                <Label x:Name="windowNameLabel" 
+                       Margin="5 3 5 3"
+                       Padding="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" 
+                       FontSize="15"
+                       FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                       Content="Добавление сотрудника" />
+                <!--WINDOW NAME LABEL END-->
+
+                <!--WINDOW BUTTONS-->
+                <Button x:Name="exitButton"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Padding="0"
+                        Width="45" Height="26"
+                        BorderThickness="0"
+                        Foreground="Crimson"
+                        materialDesign:ButtonAssist.CornerRadius="0 9.5 0 0"
+                        materialDesign:RippleAssist.Feedback="red"
+                        Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                        Click="exit">
+                    <Image x:Name="closeImage" Source="/resources/images/close-icon.png" />
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

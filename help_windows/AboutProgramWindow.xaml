@@ -1,0 +1,160 @@
+﻿<Window x:Class="Provider.help_windows.AboutProgramWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Provider.help_windows"
+        mc:Ignorable="d"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="О программе"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        WindowStartupLocation="CenterScreen" 
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Width="450" Height="625"
+        MinWidth="450" MaxWidth="1000"
+        MinHeight="625" MaxHeight="1000"
+        Style="{StaticResource windowBorderTheme}"
+        FontFamily="/resources/fonts/Nunito-ExtraBold.ttf#Nunito">
+
+    <Border x:Name="mainBorder" 
+            Margin="3" 
+            CornerRadius="10" 
+            BorderThickness="1" 
+            BorderBrush="#dcdcdc"
+            Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <!--WINDOW INTERFACE-->
+            <Border Margin="2 28 2 2" Opacity="0.4">
+                <Rectangle StrokeDashArray="3.0 1.0"  
+                           Stroke="{DynamicResource MaterialDesignBody}"  
+                           RadiusX="5"
+                           RadiusY="5"
+                           StrokeThickness="2" />
+            </Border>
+
+            <Grid Margin="4 32 4 4">
+                <StackPanel>
+                    <Label Margin="0 -8 0 0" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="28"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Provider v0.9b" />
+
+                    <Separator />
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Тема дипломного проекта" />
+
+                    <TextBlock TextWrapping="Wrap" FontSize="19" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Проектирование и разработка информационной системы для компании предоставляющей услуги доступа к сети Интернет" />
+
+                    <Separator Margin="0 5 0 0" />
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Проектирование и разработка" />
+
+                    <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Зятьков Дмитрий Владимирович" />
+
+                    <Separator Margin="10 5 10 0" />
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Руководитель дипломного проекта" />
+
+                    <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Барашин Илья Сергеевич" />
+
+                    <Separator Margin="10 5 10 0" />
+                    
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Помощь в разработке" />
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="20"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Визуальное консультрование" />
+                    
+                    <TextBlock TextWrapping="Wrap" FontSize="20" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Майорова Екатерина Дмитриевна" />
+                    <TextBlock TextWrapping="Wrap" FontSize="20" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Галкина Алина Сергеевна" />
+
+                    <Separator Margin="10 5 10 0" />
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="20"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Помощь в проектировании интерфейса" />
+                    <TextBlock TextWrapping="Wrap" FontSize="20" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Резвых Артём Александрович" />
+
+                    <Separator Margin="10 5 10 0" />
+                    
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontSize="20"
+                           FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                           FontWeight="Bold" 
+                           Content="Помощь в тестировании" />
+
+                    <TextBlock TextWrapping="Wrap" FontSize="20" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Майорова Екатерина Дмитриевна" />
+                    <TextBlock TextWrapping="Wrap" FontSize="20" FontFamily="/resources/fonts/Nunito-Medium.ttf" TextAlignment="Center" Text="Галкина Алина Сергеевна" />
+                </StackPanel>
+            </Grid>
+            <!--WINDOW INTERFACE END-->
+
+            <!--WINDOW CHROME-->
+            <Grid Grid.ColumnSpan="2" VerticalAlignment="Top">
+                <Border x:Name="windowChromeBorder" 
+                        CornerRadius="9.5 9.5 0 0" 
+                        Opacity="0.35"
+                        Background="#dcdcdc" />
+
+                <!--WINDOW NAME LABEL-->
+                <Label x:Name="windowNameLabel" 
+                       Margin="5 3 5 3"
+                       Padding="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" 
+                       FontSize="15"
+                       FontFamily="/resources/fonts/Nunito-Medium.ttf#Nunito"
+                       Content="О программе" />
+                <!--WINDOW NAME LABEL END-->
+
+                <!--WINDOW BUTTONS-->
+                <Button x:Name="exitButton"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Padding="0"
+                        Width="45" Height="26"
+                        BorderThickness="0"
+                        Foreground="Crimson"
+                        materialDesign:ButtonAssist.CornerRadius="0 9.5 0 0"
+                        materialDesign:RippleAssist.Feedback="red"
+                        Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                        Click="exit">
+                    <Image x:Name="closeImage" Source="/resources/images/close-icon.png" />
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

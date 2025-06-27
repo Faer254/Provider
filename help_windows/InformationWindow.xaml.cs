@@ -1,0 +1,57 @@
+﻿using MaterialDesignThemes.Wpf;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
+namespace Provider.help_windows
+{
+    public partial class InformationWindow : Window
+    {
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+        public InformationWindow(string information, string mainTheme)
+        {
+            InitializeComponent();
+
+            checkTheme(mainTheme);
+
+            informationTextBlock.Text = information;
+
+            okButton.Focus();
+        }
+
+        private void checkTheme(string mainTheme)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+
+            if (mainTheme != "light")
+            {
+                theme.SetBaseTheme(Theme.Dark);
+
+                mainBorder.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#494949"));
+                windowChromeBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#494949"));
+
+                closeImage.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/close-icon-white.png"));
+                infoImage.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/information-icon-white.png"));
+            }
+
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var mousePosition = e.GetPosition(this);
+
+            if (mousePosition.Y <= 26)
+            {
+                DragMove();
+            }
+        }
+
+        private void exit(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+    }
+}

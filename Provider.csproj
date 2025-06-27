@@ -1,0 +1,268 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resources\close-icon-white.png" />
+    <None Remove="resources\close-icon.png" />
+    <None Remove="resources\complete-icon-white.png" />
+    <None Remove="resources\complete-icon.png" />
+    <None Remove="resources\edit-icon-white.png" />
+    <None Remove="resources\edit-icon.png" />
+    <None Remove="resources\error-icon-white.png" />
+    <None Remove="resources\error-icon.png" />
+    <None Remove="resources\fonts\Nunito-Black.ttf" />
+    <None Remove="resources\fonts\Nunito-BlackItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-Bold.ttf" />
+    <None Remove="resources\fonts\Nunito-BoldItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-ExtraBold.ttf" />
+    <None Remove="resources\fonts\Nunito-ExtraBoldItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-ExtraLight.ttf" />
+    <None Remove="resources\fonts\Nunito-ExtraLightItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-Italic-VariableFont_wght.ttf" />
+    <None Remove="resources\fonts\Nunito-Italic.ttf" />
+    <None Remove="resources\fonts\Nunito-Light.ttf" />
+    <None Remove="resources\fonts\Nunito-LightItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-Medium.ttf" />
+    <None Remove="resources\fonts\Nunito-MediumItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-Regular.ttf" />
+    <None Remove="resources\fonts\Nunito-SemiBold.ttf" />
+    <None Remove="resources\fonts\Nunito-SemiBoldItalic.ttf" />
+    <None Remove="resources\fonts\Nunito-VariableFont_wght.ttf" />
+    <None Remove="resources\images\delete-icon-white.png" />
+    <None Remove="resources\images\delete-icon.png" />
+    <None Remove="resources\images\exit-white.png" />
+    <None Remove="resources\images\exit.png" />
+    <None Remove="resources\images\filter-icon-white.png" />
+    <None Remove="resources\images\filter-icon.png" />
+    <None Remove="resources\images\icon.png" />
+    <None Remove="resources\images\information-icon-white.png" />
+    <None Remove="resources\images\information-icon.png" />
+    <None Remove="resources\images\internet.png" />
+    <None Remove="resources\images\left-arrow-icon-white.png" />
+    <None Remove="resources\images\left-arrow-icon.png" />
+    <None Remove="resources\images\left-double-arrow-icon-white.png" />
+    <None Remove="resources\images\left-double-arrow-icon.png" />
+    <None Remove="resources\images\phone.png" />
+    <None Remove="resources\images\right-arrow-icon-white.png" />
+    <None Remove="resources\images\right-arrow-icon.png" />
+    <None Remove="resources\images\right-double-arrow-icon-white.png" />
+    <None Remove="resources\images\right-double-arrow-icon.png" />
+    <None Remove="resources\images\ruble-white.png" />
+    <None Remove="resources\images\ruble.png" />
+    <None Remove="resources\images\sms.png" />
+    <None Remove="resources\images\succes-icon-white.png" />
+    <None Remove="resources\images\succes-icon.png" />
+    <None Remove="resources\maximize-icon-white.png" />
+    <None Remove="resources\maximize-icon.png" />
+    <None Remove="resources\minimize-icon-white.png" />
+    <None Remove="resources\minimize-icon.png" />
+    <None Remove="resources\question-icon-white.png" />
+    <None Remove="resources\question-icon.png" />
+    <None Remove="resources\theme.dat" />
+    <None Remove="resources\user-icon-white.png" />
+    <None Remove="resources\user-icon.png" />
+    <None Remove="resources\windows.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\images\delete-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\delete-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\information-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\information-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\left-arrow-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\left-arrow-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\left-double-arrow-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\left-double-arrow-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\right-arrow-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\right-arrow-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\right-double-arrow-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\right-double-arrow-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\succes-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\succes-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="8.0.5" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="MySql.Data" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\images\background-image.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\close-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\close-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\complete-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\complete-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\edit-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\edit-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\error-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\error-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-BlackItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-BoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-ExtraBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-ExtraBoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-ExtraLight.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-ExtraLightItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Italic-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Italic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-LightItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-MediumItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-SemiBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-SemiBoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\Nunito-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\exit-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\exit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\filter-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\filter-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\internet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\maximize-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\maximize-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\minimize-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\minimize-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\phone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\question-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\question-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\ruble-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\ruble.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\sms.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\user-icon-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\images\user-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\theme.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
